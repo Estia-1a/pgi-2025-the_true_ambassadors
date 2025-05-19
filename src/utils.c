@@ -1,4 +1,5 @@
 #include <estia-image.h>
+#include <stdio.h>
 
 #include "utils.h"
 
@@ -8,8 +9,6 @@
  */
 
 
-pixelRGB get_pixel(int ){
-
-if x
-
+second_line(char *source_path) {
+    
 }
