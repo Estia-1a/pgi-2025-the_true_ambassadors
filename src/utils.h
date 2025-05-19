@@ -9,11 +9,14 @@
 */
 
 typedef struct _pixelRGB {
-  /*
-   * TO COMPLETE
-   */
-   char R ; 
+  
+   unsigned char R ;
+   unsigned char G;
+   unsigned char B; 
 } pixelRGB ;
+
+pixelRGB * get_pixel( unsigned char* data, const unsigned int width, const unsigned int height, const unsigned int n, const unsigned int x, const unsigned int y );
+int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
 
 
 #endif

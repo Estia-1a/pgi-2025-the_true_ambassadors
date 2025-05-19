@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
   Config configuration ;
   parse_arguments( argc, argv, &configuration ) ;
   check_debug_mode(configuration);
-  check_file();
+check_file();
   /* END */
 
   /* Use "if ( strncmp( command, <commandname>, 9 ) == 0 )" to check if your <commandname> is called by program.*/
