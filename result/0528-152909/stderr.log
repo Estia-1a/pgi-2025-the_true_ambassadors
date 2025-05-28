@@ -1,0 +1,20 @@
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c:11:10: error: conflicting types for ‘get_pixel’; have ‘pixelRGB(int)’ {aka ‘struct _pixelRGB(int)’}
+   11 | pixelRGB get_pixel(int ){
+      |          ^~~~~~~~~
+In file included from /home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c:3:
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.h:18:12: note: previous declaration of ‘get_pixel’ with type ‘pixelRGB *(unsigned char *, const unsigned int,  const unsigned int,  const unsigned int,  const unsigned int,  const unsigned int)’ {aka ‘struct _pixelRGB *(unsigned char *, const unsigned int,  const unsigned int,  const unsigned int,  const unsigned int,  const unsigned int)’}
+   18 | pixelRGB * get_pixel( unsigned char* data, const unsigned int width, const unsigned int height, const unsigned int n, const unsigned int x, const unsigned int y );
+      |            ^~~~~~~~~
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c: In function ‘get_pixel’:
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c:13:4: error: expected ‘(’ before ‘x’
+   13 | if x
+      |    ^
+      |    (
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c:13:4: error: ‘x’ undeclared (first use in this function)
+/home/runner/work/pgi-2025-the_true_ambassadors/pgi-2025-the_true_ambassadors/src/utils.c:13:4: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/freud.dir/build.make:121: CMakeFiles/freud.dir/src/utils.c.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/freud.dir/all] Error 2
+gmake: *** [Makefile:136: all] Error 2
+
+The process '/usr/local/bin/cmake' failed with exit code 2
