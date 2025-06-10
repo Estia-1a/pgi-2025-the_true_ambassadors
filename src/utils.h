@@ -19,4 +19,6 @@ pixelRGB * get_pixel( unsigned char* data, const unsigned int width, const unsig
 int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
 
 
+
+
 #endif
