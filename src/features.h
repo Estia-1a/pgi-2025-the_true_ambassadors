@@ -4,4 +4,6 @@
 
 void helloWorld();
 
+void max_pixel();
+
 #endif
