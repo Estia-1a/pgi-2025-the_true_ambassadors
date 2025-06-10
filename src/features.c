@@ -41,8 +41,6 @@ void dimension(char *source_path) {
     } else {
         printf("Error reading image data.\n");
     }
-
-
 }
 
 
