@@ -4,4 +4,7 @@
 
 void helloWorld();
 
+void get_dimension();
+void dimension();
+
 #endif
