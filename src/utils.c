@@ -3,12 +3,16 @@
 
 #include "utils.h"
 
+//#ifndef
 /**
  * @brief Here, you have to define functions of the pixel struct : getPixel and setPixel.
  * 
  */
 
+pixelRGB * get_pixel(unsigned char *data, const unsigned int width, const unsigned int height, const unsigned int n, const unsigned int x, const unsigned int y);
 
-second_line(char *source_path) {
-    
-}
+void print_pixel( char *filename, int x, int y);
+
+pixelRGB * second_line(char *source_path);
+
+//#endif
