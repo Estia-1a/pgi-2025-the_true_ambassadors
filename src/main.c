@@ -31,6 +31,14 @@ check_file();
     /* helloworld() function is defined in feature.h and implemented in feature.c */
     helloWorld();
   }
+
+/*
+
+print_pixel("./images/imput/image.jpeg",45,500);
+  get_pixel("./images/imput/image.jpeg",45,500);
+
+*/
+  
   /*
    * TO COMPLETE
    */

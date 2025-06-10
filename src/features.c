@@ -15,6 +15,5 @@ void helloWorld() {
     printf("Hello World !");
 }
 
-void first_pixel(char *source_path){
+
     
-}
