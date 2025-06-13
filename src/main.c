@@ -35,5 +35,10 @@ check_file();
    * TO COMPLETE
    */
   
+ if ( strncmp( configuration.command, "max_pixel", 9 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    max_pixel("./images/input/image.jpeg");
+  }
+  
   return 0;
 }

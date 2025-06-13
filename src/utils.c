@@ -8,8 +8,3 @@
  */
 
 
-pixelRGB get_pixel(int ){
-
-if x
-
-}

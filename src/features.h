@@ -3,5 +3,5 @@
 
 
 void helloWorld();
-
+void max_pixel(char *source_path);
 #endif
