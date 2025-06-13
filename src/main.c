@@ -23,10 +23,10 @@ int main(int argc, char *argv[]) {
    */
 
   /*DO NOT EDIT THIS PART*/
-  //Config configuration ;
-  //parse_arguments( argc, argv, &configuration ) ;
-  //check_debug_mode(configuration);
-//check_file();
+Config configuration ;
+parse_arguments( argc, argv, &configuration ) ;
+check_debug_mode(configuration);
+  check_file();
   // END 
 
   // Use "if ( strncmp( command, <commandname>, 9 ) == 0 )" to check if your <commandname> is called by program.
@@ -39,21 +39,11 @@ int main(int argc, char *argv[]) {
   // TO COMPLETE
   
   //return 0;
-  Configuration config;
-  for (int i=1; i<argc; i++){
-    if (strcmp(argv[i], "-c") == 0 && i+1 < argc){
-      strncpy(config.command, argv[i+1], sizeof(config.command) - 1);
-      i++;
-    }else if (strcmp(argv[i], "-f") == 0 && i+1 < argc){
-      strncpy(config.source_path, argv[i+1], sizeof(config.source_path)-1);
-      i++;
-    }
+  if ( strncmp( configuration.command, "first_pixel", 11 ) == 0 ) {
+   //helloworld() function is defined in feature.h and implemented in feature.c
+  first_pixel("./images/input/image.jpeg");
   }
-  if (strncmp(config.command, "first_pixel", 11) == 0) {
-    first_pixel(config.source_path);
-  }else {
-    printf("Invalide");
-  }
+
   return 0;
 }
 

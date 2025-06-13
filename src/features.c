@@ -27,8 +27,8 @@ void first_pixel(char *source_path){
         }
     }
     unsigned char r = data[0];
-    unsigned char g = data [1];
-    unsigned char b = data [2];
+    unsigned char g = data[1];
+    unsigned char b = data[2];
 
     printf("first_pixel: %d, %d, %d\n", r, g, b);
     free(data);
