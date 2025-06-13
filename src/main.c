@@ -39,9 +39,9 @@ check_file();
     dimension(configuration.filenames[0]);
   }
 
-  /*
-   * TO COMPLETE
-   */
+  if(strncmp(configuration.command, "tenth_pixel", 11) == 0) {
+    dimension(configuration.filenames[0]);
+  }
   
   return 0;
 }
