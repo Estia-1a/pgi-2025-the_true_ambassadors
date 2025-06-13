@@ -18,7 +18,7 @@ void helloWorld() {
 void print_pixel( char *source_path, int x, int y ){
     unsigned char *data = NULL;
     int width, height, channel_count;
-    int result = read_image_data(source_path, &data, &width, &height, &channel_count);
+    int result = read_image_data(const char *filename, &data, &width, &height, &channel_count);
     if (result != 0) {
         if (data == NULL) {
             fprintf(stderr, "Error.\n");
