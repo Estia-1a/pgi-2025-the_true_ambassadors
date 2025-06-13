@@ -8,6 +8,14 @@
  *
 */
 
+#ifndef FEATURES_H
+#define FEATURES_H
+
+// Function declarations go here
+void first_pixel(const char *source_path);
+
+#endif // FEATURES_H
+
 typedef struct _pixelRGB {
   
    unsigned char R ;
