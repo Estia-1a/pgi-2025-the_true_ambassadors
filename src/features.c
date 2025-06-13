@@ -23,6 +23,7 @@ unsigned char *data = NULL;
     int sum_rgb;
     int result = read_image_data(source_path, &data, &width, &height, &channel_count);
     int maximum;
+    int x_max, y_max;
  
     
      //int x_max, y_max;
@@ -33,12 +34,14 @@ unsigned char *data = NULL;
      */ 
     
   
-    for(int i=0; i < width * height; i++){
-        unsigned char r = data[i * channel_count + 0];
-        unsigned char g = data[i * channel_count + 1];
-        unsigned char b = data[i * channel_count + 2];
+for (int i = 0; i < width * height; i++) {
+    int index = i * channel_count;  // index dans le tableau `data`
 
-        sum_rgb = r + g + b;
+    unsigned char r = data[index + 0];
+    unsigned char g = data[index + 1];
+    unsigned char b = data[index + 2];
+
+    sum_rgb = r + g + b;
 
         maximum = sum_rgb;
 
@@ -48,6 +51,9 @@ unsigned char *data = NULL;
                 max_r = r;
                 max_g = g;
                 max_b = b;
+
+                x_max = i % width;
+                y_max = i / width;
                 
 
             }
@@ -128,7 +134,7 @@ unsigned char *data = NULL;
           
 
 
- printf("maximum(%d,%d) : %d, %d, %d",width,height,max_r,max_g,max_b);
+ printf("maximum(%d,%d) : %d, %d, %d",x_max,y_max,max_r,max_g,max_b);
 
     free(data);
 }
