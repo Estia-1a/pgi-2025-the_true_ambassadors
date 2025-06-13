@@ -32,6 +32,10 @@ check_file();
     helloWorld();
   }
 
+  if ( strncmp( configuration.command, "print_pixel", 11 ) == 0 ) {
+
+    print_pixel("./images/input/image.jpeg",45,500);
+  }
 /*
 
 print_pixel("./images/imput/image.jpeg",45,500);
