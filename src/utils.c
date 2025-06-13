@@ -9,6 +9,7 @@
 
 
 pixelRGB get_pixel(int ){
+    
 }
 
 pixelRGB max_pixel (){
