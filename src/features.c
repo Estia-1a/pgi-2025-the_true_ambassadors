@@ -1,5 +1,6 @@
 #include <estia-image.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "features.h"
 #include "utils.h"
@@ -15,16 +16,11 @@ void helloWorld() {
     printf("Hello World !");
 }
 
-void print_pixel( char *source_path, int x, int y ){
+void print_pixel(char *source_path, int x, int y ){
     unsigned char *data = NULL;
     int width, height, channel_count;
-    int result = read_image_data(const char *filename, &data, &width, &height, &channel_count);
-    if (result != 0) {
-        if (data == NULL) {
-            fprintf(stderr, "Error.\n");
-            return;
-        }
-    }
+    int result = read_image_data(char *source_path, &data, &width, &height, &channel_count);
+
     int ligne = x * 3;
     int colonne = channel_count / 3;
 
