@@ -15,6 +15,54 @@
 void helloWorld() {
     printf("Hello World !");
 }
+/*
+int get_dimension() {
+    
+
+    *data = read_image_data("/images/input/image.jpeg");
+    printf("W : %d, H : %d",data.width,data.height);
+
+    
+    return 0;
+}
+
+*/
+
+/*
+
+
+
+*/
+void dimension(char *source_path) {
+    int width, height, channel_count;
+    unsigned char *data;
+
+    if(read_image_data(source_path, &data, &width, &height, &channel_count) == 0){
+        printf("Error reading image data.\n");
+    } else {
+        printf("dimension : %d, %d\n", width, height);
+    }
+}
+
+
+/*
+
+void dimension(char *source_path) {
+     int width, height, channel_count;
+     unsigned char *data;
+
+     if (read_image_data(source_path, &data, &width, &height, &channel_count) == 0) {
+         printf("dimension: %d, %d\n", width, height);
+     } else {
+         printf("Error reading image data.\n");
+     }
+ }
+*/
+
+
+
+
+
 
 void first_pixel(char *source_path){
     unsigned char *data = NULL;

@@ -29,21 +29,34 @@ check_debug_mode(configuration);
   check_file();
   // END 
 
-  // Use "if ( strncmp( command, <commandname>, 9 ) == 0 )" to check if your <commandname> is called by program.
-  // Example with helloworld command:
-  // If helloworld is a called command: freud.exe -f images/input/image.jpeg -c helloworld 
-  // if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
-  //   helloworld() function is defined in feature.h and implemented in feature.c
-  //   //helloWorld();
-  // }
-  // TO COMPLETE
+  /* Use "if ( strncmp( command, <commandname>, 9 ) == 0 )" to check if your <commandname> is called by program.*/
+  /* Example with helloworld command
+   * If helloworld is a called command: freud.exe -f images/input/image.jpeg -c helloworld 
+   */
+
+   /*
+   if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
+    // helloworld() function is defined in feature.h and implemented in feature.c 
+    helloWorld();  
+  } 
+*/
   
-  //return 0;
-  if ( strncmp( configuration.command, "first_pixel", 11 ) == 0 ) {
-   //helloworld() function is defined in feature.h and implemented in feature.c
-  first_pixel("./images/input/image.jpeg");
+
+  
+  if(strncmp(configuration.command, "dimension", 9) == 0) {
+    dimension(configuration.filenames[0]);
   }
 
+
+   //if(strncmp(configuration.command, "print_pixel", 11) == 0) {
+   // print_pixel(configuration.filenames[0]);
+   // print_pixel("./images/input/image.jpeg",45,500);
+  //}
+
+  /*
+   * TO COMPLETE
+   */
+  
   return 0;
 }
 
