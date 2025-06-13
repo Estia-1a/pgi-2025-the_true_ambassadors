@@ -3,5 +3,5 @@
 
 
 void helloWorld();
-
+void print_pixel(char *filename, int x, int y );
 #endif

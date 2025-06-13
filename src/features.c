@@ -14,3 +14,27 @@
 void helloWorld() {
     printf("Hello World !");
 }
+
+void print_pixel( char *filename, int x, int y ){
+    unsigned char *data = NULL;
+    int width, height, channel_count;
+    int result = read_image_data(filename, &data, &width, &height, &channel_count);
+    if (result != 0) {
+        if (data == NULL) {
+            fprintf(stderr, "Error.\n");
+            return;
+        }
+    }
+    int ligne = x * 3;
+    int colonne = channel_count / 3;
+
+    int coordonnee = ligne + colonne;
+
+    unsigned char r = data[coordonnee];
+    unsigned char g = data[coordonnee];
+    unsigned char b = data[coordonnee];
+
+
+    printf("print_pixel: %d, %d, %d\n,(x, y)", r, g, b);
+    free(data);
+}
