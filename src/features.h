@@ -3,5 +3,6 @@
 
 
 void helloWorld();
-
+void print_pixel(char *filename, int x, int y );
+int read_image_data(const char *filename, unsigned char **data, int *width, int *height, int *channel_count);
 #endif
