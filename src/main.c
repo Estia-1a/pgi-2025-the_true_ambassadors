@@ -27,18 +27,29 @@ check_file();
   /* Example with helloworld command
    * If helloworld is a called command: freud.exe -f images/input/image.jpeg -c helloworld 
    */
-  if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
-    /* helloworld() function is defined in feature.h and implemented in feature.c */
-    helloWorld();
-  }
 
+   /*
+   if ( strncmp( configuration.command, "helloworld", 10 ) == 0 ) {
+    // helloworld() function is defined in feature.h and implemented in feature.c 
+    helloWorld();  
+  } 
+*/
   
 
-
+  
   if(strncmp(configuration.command, "dimension", 9) == 0) {
     dimension(configuration.filenames[0]);
   }
 
+
+   //if(strncmp(configuration.command, "print_pixel", 11) == 0) {
+   // print_pixel(configuration.filenames[0]);
+   // print_pixel("./images/input/image.jpeg",45,500);
+  //}
+
+  /*
+   * TO COMPLETE
+   */
   if(strncmp(configuration.command, "tenth_pixel", 11) == 0) {
     dimension(configuration.filenames[0]);
   }
