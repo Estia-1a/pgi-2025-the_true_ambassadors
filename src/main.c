@@ -41,10 +41,11 @@ check_file();
     dimension(configuration.filenames[0]);
   }
 
-   if(strncmp(configuration.command, "print_pixel", 11) == 0) {
-    print_pixel(configuration.filenames[0]);
-    print_pixel("./images/input/image.jpeg",45,500);
-  }
+
+   //if(strncmp(configuration.command, "print_pixel", 11) == 0) {
+   // print_pixel(configuration.filenames[0]);
+   // print_pixel("./images/input/image.jpeg",45,500);
+  //}
 
   /*
    * TO COMPLETE

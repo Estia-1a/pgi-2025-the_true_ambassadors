@@ -37,9 +37,9 @@ void dimension(char *source_path) {
     unsigned char *data;
 
     if(read_image_data(source_path, &data, &width, &height, &channel_count) == 0){
-        printf("dimension : %d, %d\n", width, height);
-    } else {
         printf("Error reading image data.\n");
+    } else {
+        printf("dimension : %d, %d\n", width, height);
     }
 }
 
