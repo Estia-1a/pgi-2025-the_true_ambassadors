@@ -73,9 +73,9 @@ check_debug_mode(configuration);
     dimension(configuration.filenames[0]);
   }
 
-  if(strncmp(configuration.command, "second_line", 11) == 0) {
-    second_line("./images/input/image.jpeg");
-  }
+  //if(strncmp(configuration.command, "second_line", 11) == 0) {
+    //second_line("./images/input/image.jpeg");
+  //}
 
 
    //if(strncmp(configuration.command, "print_pixel", 11) == 0) {
