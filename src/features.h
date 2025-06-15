@@ -3,5 +3,5 @@
 
 
 void helloWorld();
-
+void color_red(char *source_path);
 #endif
