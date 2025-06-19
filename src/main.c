@@ -34,6 +34,9 @@ int main(int argc, char **argv) {
   /*
    * TO COMPLETE
    */
-  
+   if ( strncmp( configuration.command, "color_red", 9 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_red("./images/input/image.jpeg");
+  }
   return 0;
 }

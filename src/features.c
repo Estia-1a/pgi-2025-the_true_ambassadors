@@ -47,6 +47,7 @@ void color_red(char *source_path){
 */
 
          
+/*
 
 
 void color_red(char *source_path) {
@@ -66,7 +67,7 @@ void color_red(char *source_path) {
             data[index + 2] = 0; // composant b
         }
 
-        int new_result = write_data_image(source_path, data, width, height, channel_count);
+        int new_result = write_data_image("./images/input/image_out.bmp", data, width, height, channel_count);
         if (new_result == 0) {
             fprintf(stderr, "Error writing image.\n");
         }
@@ -76,3 +77,45 @@ void color_red(char *source_path) {
         fprintf(stderr, "Error reading image.\n");
     }
 }
+
+
+
+*/
+
+
+
+
+
+void color_red(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+        data[i + 1] = 0; // Mettre la composante verte à 0
+        data[i + 2] = 0; // Mettre la composante bleue à 0
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+
+
+
+    
