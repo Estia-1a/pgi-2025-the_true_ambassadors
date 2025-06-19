@@ -36,8 +36,7 @@ int get_dimension() {
 void dimension(char *source_path) {
     int width, height, channel_count;
     unsigned char *data;
-
-    if(read_image_data(source_path, &data, &width, &height, &channel_count) == 0){
+   if(read_image_data(source_path, &data, &width, &height, &channel_count) == 0){
         printf("Error reading image data.\n");
     } else {
         printf("dimension : %d, %d\n", width, height);
@@ -67,17 +66,10 @@ void dimension(char *source_path) {
 void first_pixel(char *source_path){
     unsigned char *data = NULL;
     int width, height, channel_count;
-    int result = read_image_data(source_path, &data, &width, &height, &channel_count);
-    if (result != 0) {
-        if (data == NULL) {
-            fprintf(stderr, "Error.\n");
-            return;
-        }
-    }
+    read_image_data(source_path, &data, &width, &height, &channel_count);
     unsigned char r = data[0];
     unsigned char g = data[1];
     unsigned char b = data[2];
 
     printf("first_pixel: %d, %d, %d\n", r, g, b);
-    free(data);
 }

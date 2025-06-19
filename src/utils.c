@@ -1,11 +1,10 @@
 #include <estia-image.h>
 #include <stdio.h>
-
+#include <stddef.h>
 #include "utils.h"
 
-#include <stddef.h>
 
-#include <stdio.h>
+
 
 
 //#ifndef
