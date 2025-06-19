@@ -38,5 +38,44 @@ int main(int argc, char **argv) {
     /* helloworld() function is defined in feature.h and implemented in feature.c */
     color_red("./images/input/image.jpeg");
   }
+
+     if ( strncmp( configuration.command, "color_green", 11 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_green("./images/input/image.jpeg");
+  }
+
+    if ( strncmp( configuration.command, "color_blue", 10 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_green("./images/input/image.jpeg");
+  }
+
+      if ( strncmp( configuration.command, "color_blue", 10 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_blue("./images/input/image.jpeg");
   return 0;
+}
+
+      if ( strncmp( configuration.command, "color_gray", 10 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_gray("./images/input/image.jpeg");
+  return 0;
+}
+
+    if ( strncmp( configuration.command, "invert", 6 ) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    invert("./images/input/image.jpeg");
+  return 0;
+}
+
+  if ( strncmp( configuration.command, "color_gray_luminance", 20) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_gray_luminance("./images/input/image.jpeg");
+  return 0;
+}
+
+ if ( strncmp( configuration.command, "color_desaturate", 16) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    color_desaturate("./images/input/image.jpeg");
+  return 0;
+}
 }

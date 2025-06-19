@@ -4,6 +4,7 @@
 #include "features.h"
 #include "utils.h"
 #include <stdlib.h>
+#include <math.h>
 /**
  * @brief Here, you have to code features of the project.
  * Do not forget to commit regurlarly your changes.
@@ -115,6 +116,210 @@ const char *input_filename = source_path;
   
 }
 
+void color_green(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+        data[i] = 0; // Mettre la composante rouge à 0
+        data[i + 2] = 0; // Mettre la composante bleue à 0
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+void color_blue(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+        data[i] = 0; // Mettre la composante rouge à 0
+        data[i + 1] = 0; // Mettre la composante verte à 0
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+void color_gray(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    unsigned char value;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        value = (data[i] + data[i+1] + data[i+2])/3;
+        data[i] = value;
+        data[i+1] = value;
+        data[i+2] = value;
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+void invert(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    int new_R, new_G, new_B;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+  
+        new_R = 255 - data[i];
+        new_G = 255 - data[i+1];
+        new_B = 255 - data[i+2];
+
+        data[i] = new_R;
+        data[i+1] = new_G;
+        data[i+2] = new_B;
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+void color_gray_luminance(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    unsigned char value;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        value = 0.21 * data[i] + 0.72 * data[i+1] + 0.07 * data[i+2];
+        data[i] = value;
+        data[i+1] = value;
+        data[i+2] = value;
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+void color_desaturate(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    unsigned char new_value;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        int min_value = fmin(fmin(data[i],data[i+1]),data[i+2]);
+        int max_value = fmax(fmax(data[i],data[i+1]),data[i+2]);
+
+
+        new_value = (min_value + max_value) / 2;
+        data[i] = new_value;
+        data[i+1] = new_value;
+        data[i+2] = new_value;
+    }
+
+    // Écrire les nouvelles données de l'image
+    if (write_image_data("image_out.bmp", data, width, height) == 0) {
+        fprintf(stderr, "Failed to write image data\n");
+        free(data);
+
+    }
+
+    free(data);
+  
+}
+
+
+
+
+
+
+    
 
 
 
