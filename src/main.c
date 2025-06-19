@@ -78,4 +78,16 @@ int main(int argc, char **argv) {
     color_desaturate("./images/input/image.jpeg");
   return 0;
 }
+
+ if ( strncmp( configuration.command, "max_pixel", 9) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    max_pixel("./images/input/image.jpeg");
+  return 0;
+}
+
+ if ( strncmp( configuration.command, "min_pixel", 9) == 0 ) {
+    /* helloworld() function is defined in feature.h and implemented in feature.c */
+    min_pixel("./images/input/image.jpeg");
+  return 0;
+}
 }

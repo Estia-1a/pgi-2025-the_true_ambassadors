@@ -316,6 +316,134 @@ const char *input_filename = source_path;
 
 
 
+void max_pixel(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    int maximum;
+    int maximum_R, maximum_G, maximum_B;
+    int somme;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        maximum = data[i] + data[i+1] + data[i+2];
+        maximum_R = data[i];
+        maximum_G = data[i+1];
+        maximum_B = data[i+2];
+
+        somme = data[i] + data[i+1] + data[i+2];
+
+        if(somme > maximum){
+            maximum = somme;
+            maximum_R = data[i];
+            maximum_G = data[i+1];
+            maximum_B = data[i+2];
+
+        }
+
+    }
+
+    // Écrire les nouvelles données de l'image
+    printf("R : %d, G : %d, B : %d",maximum_R,maximum_G,maximum_B);
+
+    free(data);
+  
+}
+
+void min_pixel(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    int minimum;
+    int minimum_R, minimum_G, minimum_B;
+    int somme;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        minimum = data[i] + data[i+1] + data[i+2];
+        minimum_R = data[i];
+        minimum_G = data[i+1];
+        minimum_B = data[i+2];
+
+        somme = data[i] + data[i+1] + data[i+2];
+
+        if(somme < minimum){
+            minimum = somme;
+            minimum_R = data[i];
+            minimum_G = data[i+1];
+            minimum_B = data[i+2];
+
+        }
+
+    }
+
+    // Écrire les nouvelles données de l'image
+    printf("R : %d, G : %d, B : %d",minimum_R,minimum_G,minimum_B);
+
+    free(data);
+  
+}
+
+void max_pixel(char *source_path) {
+
+const char *input_filename = source_path;
+    unsigned char *data;
+    int width, height, channel_count;
+    int maximum;
+    int maximum_R, maximum_G, maximum_B;
+    int somme;
+
+    // Lire les données de l'image
+    if (read_image_data(input_filename, &data, &width, &height, &channel_count) == 0) {
+        fprintf(stderr, "Failed to read image data\n");
+        
+    }
+
+    // Transformer l'image pour ne garder que la composante rouge
+    for (int i = 0; i < width * height * channel_count; i += channel_count) {
+
+        maximum = data[i] + data[i+1] + data[i+2];
+        maximum_R = data[i];
+        maximum_G = data[i+1];
+        maximum_B = data[i+2];
+
+        somme = data[i] + data[i+1] + data[i+2];
+
+        if(somme > maximum){
+            maximum = somme;
+            maximum_R = data[i];
+            maximum_G = data[i+1];
+            maximum_B = data[i+2];
+
+        }
+
+    }
+
+    // Écrire les nouvelles données de l'image
+    printf("R : %d, G : %d, B : %d",maximum_R,maximum_G,maximum_B);
+
+    free(data);
+  
+}
+
+
+
 
 
 
